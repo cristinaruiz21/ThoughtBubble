@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "./bubble-logo.png";
-
-export function Login() {
+import logo from "../Assets/bubble-logo.png";
+import {Row, Col, Container} from "../components/Grid"
+ function Login() {
     return (
-        <div className="container">
-            <div className="row">
+        <Container>
+            <Row>
                 <div id="loginCard" className="form-inline justify-content-center card col-md-6 mx-auto col-md-offset-3 text-dark">
                     <div id="loginBody">
                         <div>
@@ -27,8 +27,9 @@ export function Login() {
 
                     </div>
                 </div> 
-            </div>
-        </div>
+            </Row>
+        </Container>
 
 )
 }
+export default Login
