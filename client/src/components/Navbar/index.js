@@ -21,12 +21,13 @@ function Navbar(){
             Home
             </Link>
           </li>
+      
           <li className="nav-item">
             <Link
-              to="/logout"
-              className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}
+              to="/login"
+              className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
             >
-              Checkout
+              Logout
             </Link>
           </li>
        </ul>
