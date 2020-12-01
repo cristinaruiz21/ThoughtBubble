@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import Navbar from "./components/Navbar"
 import Login from "./pages/Login.js"
 import CardContainer from './components/CardContainer'
+import Footer from './components/Footer'
 import Signup from "./pages/Signup.js"
 import Fitness from "./pages/Fitness"
 import Food from "./pages/Food"
@@ -13,6 +14,8 @@ function App(){
   return (
     <Router>
       <div>
+      <Navbar/>
+      <Route exact path="/" component={Home}/>
         <Navbar />
       <Route exact path="/" component={Login}/>
       <Route exact path="/home" component={Home}/>
@@ -22,7 +25,10 @@ function App(){
       <Route exact path="/home/food" component={Food}/>
       <Route exact path="/home/thoughts" component={Thoughts}/>
       <CardContainer/>
+
+      <Footer/>
       </div>
+
     </Router>
   )
 }
