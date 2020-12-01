@@ -2,7 +2,7 @@ import React from "react";
  import logo from "../Assets/bubble-logo.png";
 
 
- function SignupComponent() {
+function Signup() {
     return (
         <div className="container">
             <div className="row">
@@ -41,4 +41,4 @@ import React from "react";
     )
 }
 
-export default SignupComponent
+export default Signup;
