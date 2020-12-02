@@ -10,9 +10,6 @@ function Home ()
     {
 
 return(
-<<<<<<< HEAD
-   <h1>Hello</h1> 
-=======
     <div>
     <h4  style={{background : "green", textAlign:"center",color:"white",}}>Select your Bubble  Board</h4>
 
@@ -36,7 +33,6 @@ return(
 
     
     
->>>>>>> 855d825a92856de57e62b11998e9956a586781e4
 )
 
 
