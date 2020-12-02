@@ -2,6 +2,8 @@ import React from 'react';
 import Card from 'react-bootstrap/Card'
 
 function Fitness() {
+
+    
     
     const cardInfo = [
         {image: "https://i.insider.com/5ae091d7bd967121008b4646?width=750&format=jpeg&auto=webp", title: "Post Thanksgiving", text: "Working out on Monday after Thanksgiving!" },
