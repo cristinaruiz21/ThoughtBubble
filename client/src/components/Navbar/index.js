@@ -4,14 +4,14 @@ import {Link} from "react-router-dom";
 function Navbar(){
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
+      <Link className="navbar-brand" to="/home">
         Thought Bubble
       </Link>
       <div>
         <ul className="navbar-nav">
         <li className="nav-item">
             <Link
-              to="/"
+              to="/home"
               className={
                 window.location.pathname === "/" || window.location.pathname === "/home"
                   ? "nav-link active"
