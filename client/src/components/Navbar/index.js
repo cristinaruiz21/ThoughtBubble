@@ -21,6 +21,14 @@ function Navbar(){
             Home
             </Link>
           </li>
+          <li className="nav-item">
+            <Link
+              to="/bubbleform"
+              className={window.location.pathname === "/bubbleform" ? "nav-link active" : "nav-link"}
+            >
+              BubbleForm
+            </Link>
+          </li>
       
           <li className="nav-item">
             <Link

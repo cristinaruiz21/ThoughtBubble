@@ -9,6 +9,7 @@ import Signup from "./pages/Signup/Signup.js"
 import Fitness from "./pages/Fitness"
 import Food from "./pages/Food"
 import Thoughts from "./pages/Thoughts"
+import BubbleForm from "./pages/BubbleForm/BubbleForm.js"
 
 function App(){
   return (
@@ -18,6 +19,7 @@ function App(){
       <Route exact path="/" component={Login}/>
       <Route exact path="/home" component={Home}/>
       <Route exact path="/login" component={Login}/>
+      <Route exact path="/bubbleform" component={BubbleForm}/>
       <Route exact path="/signup" component={Signup}/>
       <Route exact path="/home/fitness" component={Fitness}/>
       <Route exact path="/home/food" component={Food}/>
