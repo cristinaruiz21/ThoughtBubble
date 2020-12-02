@@ -11,7 +11,7 @@ function Thoughts() {
 
     const renderCard = (card, index) => {
         return (
-            <Card style={{ width: '18rem' }} key={index} className="box-thought">
+            <Card key={index} className="box-thought">
                 <Card.Img variant="bottom"  src={card.image} className="img-thought"/>
                 <Card.Body>
                     <Card.Title>{card.title}</Card.Title>
