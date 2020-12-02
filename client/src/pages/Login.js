@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../Assets/bubble-logo.png";
-import {Row, Col, Container} from "../components/Grid"
+import {Row, Col, Container} from "../components/Grid";
+
  function Login() {
     return (
         <Container>
