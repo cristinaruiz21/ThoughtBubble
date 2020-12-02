@@ -8,7 +8,9 @@ import Footer from './components/Footer'
 // import Signup from "./pages/Signup.js"
 // import Fitness from "./pages/Fitness"
 // import Food from "./pages/Food"
-import Thoughts from "./pages/Thoughts"
+// import Thoughts from "./pages/Thoughts"
+// import Fitness from './pages/Fitness'
+import Food from './pages/Food'
 import './App.css';
 
 function App(){
@@ -26,7 +28,9 @@ function App(){
       <Route exact path="/home/food" component={Food}/> */}
       {/* <Route exact path="/home/thoughts" component={Thoughts}/> */}
       {/* <CardContainer/> */}
-      <Thoughts/>  
+      {/* <Thoughts/>   */}
+      {/* <Fitness/> */}
+      <Food/>
       <Footer/>
       </div>
 
