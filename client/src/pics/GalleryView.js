@@ -6,7 +6,7 @@ function Gallery(){
     const[refresh,setRefresh]=useState(false)
 
     useEffect(() => {
-        axios.get('/api/pics/mypics')
+        axios.get('/api/pics/:id')
             .then(res=>{
                 setImgs(res.data)
             })
