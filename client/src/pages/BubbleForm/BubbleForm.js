@@ -73,7 +73,7 @@ const addPic=()=>{
 
 
     return (
-
+        <div classname="parent">
         <Container>
             {redirect?<Redirect push to='/'/>:<div></div>}
             {showUp?
@@ -135,6 +135,7 @@ const addPic=()=>{
         <></>
             }
         </Container>
+        </div>
 
     )
 }
