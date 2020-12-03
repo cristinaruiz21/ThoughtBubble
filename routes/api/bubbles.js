@@ -28,7 +28,7 @@ router
 
 ////////create reference to img url in mongodb
 router.route('/dbpic')
-.post(picsController.create)
+.post(bubbleController.create)
 
 
 //////////////// use multer upload method to organize file data to readable format

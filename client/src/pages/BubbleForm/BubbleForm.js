@@ -50,7 +50,7 @@ const handlefile=(event)=>{
     for (var p of formData) {
       console.log(p);
     }
-    axios.post('/api/pics/imgup',formData).then((response)=>{
+    axios.post('/api/bubbles/imgup',formData).then((response)=>{
       console.log (response)
       setUp(response.data)
       setShow(false)
@@ -63,7 +63,7 @@ const addPic=()=>{
     const pObj={
       url: upImg
     }
-    axios.post('/api/pics/dbpic',pObj).then(res=>{
+    axios.post('/api/bubbles/dbpic',pObj).then(res=>{
       console.log(res)
       setRedirect(true)
     })
@@ -99,12 +99,12 @@ const addPic=()=>{
 
                         </div>
                         <input id="imgI" type='file' accept="image/*" name="file" encType="multipart/form-data" onChange={addPic} />
-                        {/* <Button  className="btn btn-outline-primary btn-sm" id="upload" type='button' onClick={handlefile}>upload image</Button> */}
+                        <Button  className="btn btn-outline-primary btn-sm" id="upload" type='button' onClick={handlefile}>upload image</Button>
 
                         <div className="text-center">
                             <button type="button" class="btn btn-primary btn-sm"
                             disabled={(!search.title)}
-                            onClick ={handlefile}
+                            onClick ={handleFormSubmit}
                             
                             >create bubble</button>
                         </div>
