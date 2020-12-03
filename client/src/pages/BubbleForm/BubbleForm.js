@@ -1,6 +1,6 @@
 import React ,{useState}from "react"
 import axios from 'axios'
-import { Row, Col, Container } from "../../components/Grid";
+import { Row, Container } from "../../components/Grid";
 import API from "../../utils/API"
 import {Link} from "react-router-dom"
 import{Input} from "../../components/Form"
@@ -98,13 +98,13 @@ const addPic=()=>{
 
 
                         </div>
-                        <input id="imgI" type='file' accept="image/*" name="file" encType="multipart/form-data" onChange={handleInputChange} />
-                        <Button  className="btn btn-outline-primary btn-sm" id="upload" type='button' onClick={handlefile}>upload image</Button>
+                        <input id="imgI" type='file' accept="image/*" name="file" encType="multipart/form-data" onChange={addPic} />
+                        {/* <Button  className="btn btn-outline-primary btn-sm" id="upload" type='button' onClick={handlefile}>upload image</Button> */}
 
                         <div className="text-center">
                             <button type="button" class="btn btn-primary btn-sm"
                             disabled={(!search.title)}
-                            onClick ={handleFormSubmit}
+                            onClick ={handlefile}
                             
                             >create bubble</button>
                         </div>
@@ -141,4 +141,4 @@ const addPic=()=>{
 }
 
 
-export default BubbleForm
+export default BubbleForm;
