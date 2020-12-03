@@ -8,7 +8,7 @@ import Login from "./pages/Login/Login.js"
 import Signup from "./pages/Signup/Signup.js"
 import Fitness from "./pages/Fitness"
 import Food from "./pages/Food"
-// import Thoughts from "./pages/Thoughts"
+import Thoughts from "./pages/Thoughts"
 
 function App(){
   return (

@@ -1,7 +1,11 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
 
+
+
 function Food() {
+
+    
     
     const cardInfo = [
         {image: "https://media-cdn.tripadvisor.com/media/photo-s/16/b5/f2/89/photo0jpg.jpg", title: "WhataBeezy", text: "WHATABURGER is better than In-n-Out!!" },
