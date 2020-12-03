@@ -2,8 +2,8 @@ import React from "react"
 import Button from "../components/Button"
 import {Container, Row} from "../components/Grid"
 import {Link} from "react-router-dom"
-import API from "../utils/API"
-import thoughts from "./Thoughts"
+// import API from "../utils/API"
+// import thoughts from "./Thoughts"
 
 
 

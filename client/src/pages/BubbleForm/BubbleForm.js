@@ -1,6 +1,6 @@
 import React ,{useState}from "react"
 import axios from 'axios'
-import { Row, Col, Container } from "../../components/Grid";
+import { Row, Container } from "../../components/Grid";
 import API from "../../utils/API"
 import {Link} from "react-router-dom"
 import{Input} from "../../components/Form"
@@ -50,7 +50,7 @@ const handlefile=(event)=>{
     for (var p of formData) {
       console.log(p);
     }
-    axios.post('/api/pics/imgup',formData).then((response)=>{
+    axios.post('/api/bubbles/imgup',formData).then((response)=>{
       console.log (response)
       setUp(response.data)
       setShow(false)
@@ -63,7 +63,7 @@ const addPic=()=>{
     const pObj={
       url: upImg
     }
-    axios.post('/api/pics/dbpic',pObj).then(res=>{
+    axios.post('/api/bubbles/dbpic',pObj).then(res=>{
       console.log(res)
       setRedirect(true)
     })
@@ -98,7 +98,7 @@ const addPic=()=>{
 
 
                         </div>
-                        <input id="imgI" type='file' accept="image/*" name="file" encType="multipart/form-data" onChange={handleInputChange} />
+                        <input id="imgI" type='file' accept="image/*" name="file" encType="multipart/form-data" onChange={addPic} />
                         <Button  className="btn btn-outline-primary btn-sm" id="upload" type='button' onClick={handlefile}>upload image</Button>
 
                         <div className="text-center">
@@ -141,4 +141,4 @@ const addPic=()=>{
 }
 
 
-export default BubbleForm
+export default BubbleForm;
