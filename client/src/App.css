@@ -31,7 +31,11 @@
 
 
 
-#board{
-    margin: 2em;
-    background : green;
+.board{
+    margin: 1em;
+    /* background-color: #6f489e !important; */
+    border-radius: 24px!important;
+    
+    /* background-color: #abb4aa !important; */
+
 }
