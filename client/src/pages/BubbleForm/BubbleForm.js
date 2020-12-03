@@ -20,6 +20,7 @@ function handleInputChange(event){
     const {name , value} = event.target;
     setSearch({...search , [name]:value})
     setImgD(event.target.files)
+    console.log(imgData)
     
 };
 
@@ -32,7 +33,7 @@ function handleFormSubmit(event){
         API.saveBubble({
             title : search.title,
             caption : search.caption,
-            image : search.image
+            image : search.file
         })
         .then(res=>{<Link to="/home" />})
         .catch(err => console.log(err))
@@ -57,16 +58,16 @@ const handlefile=(event)=>{
     //##################
 }
 
-//////////add url to db
-// const addPic=()=>{
-//     const pObj={
-//       url: upImg
-//     }
-//     axios.post('/api/pics/dbpic',pObj).then(res=>{
-//       console.log(res)
-//       setRedirect(true)
-//     })
-//   }
+////////add url to db
+const addPic=()=>{
+    const pObj={
+      url: upImg
+    }
+    axios.post('/api/pics/dbpic',pObj).then(res=>{
+      console.log(res)
+      setRedirect(true)
+    })
+  }
 
 
 
@@ -113,7 +114,7 @@ const handlefile=(event)=>{
             </Row>:
             <></>
             }
-            {/* {!showUp?
+            {!showUp?
             <Row>
             <div className="card col-md-8 mx-auto col-md-offset-3">
                 <h2 className="text-center">Create your Bubble</h2>
@@ -132,7 +133,7 @@ const handlefile=(event)=>{
             </div>
         </Row>:
         <></>
-            } */}
+            }
         </Container>
 
     )

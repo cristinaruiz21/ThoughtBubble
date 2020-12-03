@@ -7,10 +7,10 @@ router.route("/")
   .post(bubbleController.create);
 
 // Matches with "/api/bubbles/:id"
-// router
-//   .route("/:id")
-//   .get(bubbleController.findById)
-//   .put(bubbleController.update)
-//   .delete(bubbleController.remove);
+router
+  .route("/:id")
+  .get(bubbleController.findById)
+  .put(bubbleController.update)
+  .delete(bubbleController.remove);
 
 module.exports = router;
