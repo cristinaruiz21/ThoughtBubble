@@ -1,49 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import Deletebtn from 'react-bootstrap/Button';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import API from '../utils/API';
-import { Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import React, { Component } from 'react';
+import axios from 'axios';
 
-function Fitness() {
-    const [fitness, setFitness] = useState([])
-    const [formObject, setformObject] = useState({})
 
-    useEffect(() => {
-        loadFitness()
-    }, [])
+export default class Fitness extends Component {
 
-    function loadFitness() {
-        API.getFitness()
-        .then(res => 
-            setFitness(res.data)
+    constructor() {
+        super();
+        this.state = {
+
+            id: "",
+            title: "",
+            description: "",
+            image: "",
+        }
+    }
+
+    handleButtonClick = () => {
+        axios.get("/notknown").then(response => {
+            console.log(response.data)
+            this.setState({
+                id: response.data.id,
+                title: response.data.title,
+                description: response.data.description,
+                image: response.data.image 
+            })
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>{this.state.id}</h1>
+                <h1>{this.state.title}</h1>
+                <h1>{this.state.description}</h1>
+                <h1>{this.state.image}</h1>
+            </div>
         )
-        .catch(err => console.log(err));
-    };
-
-    function deleteFitness(id) {
-        API.deleteFitness(id)
-          .then(res => loadFitness())
-          .catch(err => console.log(err));
-      }
-
-
-
-      return (
-
-
-
-
-
-      )
-
-
-
-
-
+    }
 
 }
+
