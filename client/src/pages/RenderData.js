@@ -8,20 +8,18 @@ export default class Fitness extends Component {
         super();
         this.state = {
 
-            id: "",
             title: "",
-            description: "",
+            caption: "",
             image: "",
         }
     }
 
-    handleButtonClick = () => {
-        axios.get("/notknown").then(response => {
+    getData = () => {
+        axios.get("/http://localhost5001/bubbles").then(response => {
             console.log(response.data)
             this.setState({
-                id: response.data.id,
                 title: response.data.title,
-                description: response.data.description,
+                caption: response.data.caption,
                 image: response.data.image 
             })
         })
@@ -30,9 +28,8 @@ export default class Fitness extends Component {
     render() {
         return (
             <div>
-                <h1>{this.state.id}</h1>
                 <h1>{this.state.title}</h1>
-                <h1>{this.state.description}</h1>
+                <h1>{this.state.caption}</h1>
                 <h1>{this.state.image}</h1>
             </div>
         )

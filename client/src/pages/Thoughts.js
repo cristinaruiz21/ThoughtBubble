@@ -5,7 +5,7 @@ function Thoughts() {
     
     const cardInfo = [
         {image: "https://smartbear.com/smartbear/media/blog/wp/quality-history.jpg", title: "Thinking", text: "Today's class was difficult!" },
-        {image: "https://lh3.googleusercontent.com/proxy/dKihNHS2iXm_RLSHS1msB7IH3UY-tRAYTlO7nu3nW80HCUzve-EBC5lNkj1KJIop5DcChUpH65_SBNVDVrgdyVi9c4PZvqY", title: "Bad Drivers", text: "Why is it that every car has a turn signal and no one uses it!" },
+        {image: "https://lh3.googleusercontent.com/proxy/IjsTVr_UmxwG5-JP-HI-H1zoVvihLhJ6QNq7btzUXwYz7ESsuHgelQkUM6vRWcxarQs63Y1X9feuxqSh3dy-cL4mFeu7xTc", title: "Bad Drivers", text: "Why is it that every car has a turn signal and no one uses it!" },
         {image: "https://images.unsplash.com/photo-1554672723-b208dc85134f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", title: "Burning Money", text: "I just bought a macbook that I now have to buy more apple products just to connect it to everything!" },
     ];
 
