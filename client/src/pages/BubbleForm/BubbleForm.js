@@ -48,7 +48,7 @@ function handleFormSubmit(event){
 
 
     return (
-
+        <div classname="parent">
         <Container>
             <Row>
                 <div className="card col-md-8 mx-auto col-md-offset-3">
@@ -82,7 +82,7 @@ function handleFormSubmit(event){
 
 
                         </div>
-                        <Button  className="btn btn-outline-primary btn-sm">upload image</Button>
+                        <Button  className="btn btn-outline-primary btn-sm neweffects">upload image</Button>
 
                         <div className="text-center">
                             <button type="button" class="btn btn-primary btn-sm"
@@ -96,6 +96,7 @@ function handleFormSubmit(event){
                 </div>
             </Row>
         </Container>
+        </div>
 
     )
 }

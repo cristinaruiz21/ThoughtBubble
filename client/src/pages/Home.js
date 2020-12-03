@@ -12,7 +12,7 @@ function Home ()
 
 return(
     <div>
-    <h4  style={{background : "green", textAlign:"center",color:"white",}}>Select your Bubble  Board</h4>
+    <h4  style={{background : "green", textAlign:"center",color:"white",margin:30, padding:10,borderRadius: 20}}>Select your Bubble  Board</h4>
 
         <Container style={{marginTop:30}} >
             <Row>
