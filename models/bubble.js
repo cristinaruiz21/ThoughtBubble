@@ -5,7 +5,7 @@ const bubbleSchema = new Schema({
   title: { type: String, required: true },
   caption: { type: String, required: true },
   date: { type: Date, default: Date.now },
-  picUrl: {type: String}
+  image: {type: String}
 });
 
 const Bubble = mongoose.model("Bubble", bubbleSchema);
