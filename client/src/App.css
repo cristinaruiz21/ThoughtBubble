@@ -28,3 +28,10 @@
   background: #6CADDC;
   width: 60%;
 }
+
+
+
+#board{
+    margin: 2em;
+    background : green;
+}
