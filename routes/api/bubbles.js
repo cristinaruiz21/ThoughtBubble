@@ -9,8 +9,8 @@ router.route("/")
 // Matches with "/api/bubbles/:id"
 router
   .route("/:id")
-  .get(bubbleController.findById)
-  .put(bubbleController.update)
+  // .get(bubbleController.findById)
+  // .put(bubbleController.update)
   .delete(bubbleController.remove);
 
 module.exports = router;
