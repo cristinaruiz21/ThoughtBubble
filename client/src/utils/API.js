@@ -1,6 +1,6 @@
-// // import axios from "axios";
+import axios from "axios";
 
-// export default {
+export default {
 
 //   // Gets the bubble based on given id
 //   getBubbles: function(id) {
@@ -10,8 +10,8 @@
 //   deleteBubble: function(id) {
 //     return axios.delete("/api/bubble/" + id);
 //   },
-//   // Saves a book to the database
-//   saveBubble: function(bubbleData) {
-//     return axios.post("/api/bubble", bubbleData);
-//   }
-// };
+  // Saves a book to the database
+  saveBubble: function(bubbleData) {
+    return axios.post("/api/bubble", bubbleData);
+  }
+};

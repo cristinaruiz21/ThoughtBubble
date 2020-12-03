@@ -6,6 +6,7 @@ import API from "../utils/API"
 import thoughts from "./Thoughts"
 
 
+
 function Home ()
     {
 
@@ -18,10 +19,10 @@ return(
                 <div className="col-md-6 offset-md-3">
                
 
-   <Link to={"/home/thoughts"} ><Button >Everyday Thoughts</Button></Link><br />
-   <Link to={"/home/fitness"} ><Button >Fitness</Button></Link><br />
+   <Link to={"/home/thoughts"} ><Button className="btn btn-primary btn-lg btn-block board">Everyday Thoughts</Button></Link><br />
+   <Link to={"/home/fitness"} ><Button className="btn btn-primary btn-lg btn-block board">Fitness</Button></Link><br />
 
-   <Link to={"/home/food"} ><Button >Food</Button></Link><br />
+   <Link to={"/home/food"} ><Button className="btn btn-primary btn-lg btn-block board" >Food</Button></Link><br />
 
 
     </div>

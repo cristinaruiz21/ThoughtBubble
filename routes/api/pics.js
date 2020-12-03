@@ -2,7 +2,7 @@ const router = require("express").Router();
 const db = require("../../models");
 const fs=require('fs')
 const picsController = require("../../controllers/picsController");
-require('dotenv').config();
+// require('dotenv').config();
 //import multer and create a folder "uploads" to hold on to temp files
 const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })

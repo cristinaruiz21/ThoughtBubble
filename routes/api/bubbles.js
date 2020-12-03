@@ -3,7 +3,7 @@ const bubbleController = require("../../controllers/bubbleController");
 
 // Matches with "/api/bubbles"
 router.route("/")
-  .get(bubbleController.findAll)
+  // .get(bubbleController.findAll)
   .post(bubbleController.create);
 
 // Matches with "/api/bubbles/:id"
