@@ -42,7 +42,17 @@ router.post("/imgup", upload.single('file'),function(req,res, next){
       ////save the file path to temp folder and delete file
       console.log(req.file.path+"\n^^^^^^^^^^^^^^")
       fs.unlink(req.file.path, err=>{if(err){console.log(err)}})
-      res.json(image.url)
+      // res.json(image.url)
+      const obj={
+        title:req.body.name,
+        caption:req.body.caption,
+        category : req.body.category,
+        url:image.url,
+      }
+     
+        let result= bubbleController.create(obj)
+        console.log(result)
+        res.json(result)
     })
     .then(function () {
       console.log('** photo saved');

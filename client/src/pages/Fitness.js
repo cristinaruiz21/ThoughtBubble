@@ -27,7 +27,7 @@ function Thoughts() {
 
 
                         <Card key={book._id} className="box-thought">
-                            <Card.Img variant="bottom" src="https://via.placeholder.com/150/FFFF00/000000?C/O https://placeholder.com/Text=Digital.com C/O https://placeholder.com/" className="img-thought" />
+                            <Card.Img variant="bottom" src={book.url  || "https://via.placeholder.com/150/0000FF/808080 ?Text=Digital.com"} className="img-thought" />
                             <Card.Body>
                                 <Card.Title>{book.title}</Card.Title>
                                 <Card.Text>

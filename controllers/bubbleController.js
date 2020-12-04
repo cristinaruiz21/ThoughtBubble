@@ -2,11 +2,11 @@ const db = require("../models");
 
 module.exports = {
     //function to create Bubble
-    create: function(req, res) {
+    create: function(data) {
         db.Bubble
-          .create(req.body)
-          .then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
+          .create(data)
+          .then(dbModel => dbModel)
+          .catch(err => console.log(err));
       },
 
     //function to remove Bubble
