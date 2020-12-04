@@ -16,7 +16,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-router.route("/mypics")
+router.route("/")
   .get(bubbleController.findAll)
   .post(bubbleController.create);
 
