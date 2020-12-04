@@ -2,26 +2,22 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-export default class Fitness extends Component {
+ class Fitness extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-
-            title: "",
-            caption: "",
-            image: "",
-        }
-    }
+   state = {
+       title: "Daniel",
+       caption: "",
+       image: ""
+   }
 
     getData = () => {
-        axios.get("/http://localhost5001/bubbles").then(response => {
+        axios.get("/api/bubbles").then(response => {
             console.log(response.data)
-            this.setState({
-                title: response.data.title,
-                caption: response.data.caption,
-                image: response.data.image 
-            })
+            // this.setState({
+            //     title: response.data.title,
+            //     caption: response.data.caption,
+            //     image: response.data.image 
+            // })
         })
     }
 

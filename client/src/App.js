@@ -10,7 +10,7 @@ import Fitness from "./pages/Fitness"
 import Food from "./pages/Food"
 import Thoughts from "./pages/Thoughts"
 import BubbleForm from "./pages/BubbleForm/BubbleForm.js"
-import Data from './pages/RenderData'
+
 
 
 function App(){
