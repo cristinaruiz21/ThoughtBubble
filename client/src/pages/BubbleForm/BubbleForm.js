@@ -1,7 +1,9 @@
 import React,{useState} from "react";
 import axios from 'axios'
+
 // import patient from '../utils/patient.gif'
 import {Redirect,useParams} from 'react-router-dom'
+
 
 function Upform(){
     const[imgData, setImgD]=useState('')
@@ -12,9 +14,11 @@ function Upform(){
     const[showUp, setShow]=useState(true)
     const[redirect,setRedirect]=useState(false)
 
+
     const {category} = useParams()
       
     
+
 
     ////// track change of file input and capture data
     const handleIChange=(event)=>{
@@ -47,7 +51,9 @@ function Upform(){
       formData.append('file',imgData );
       formData.append('name',name)
       formData.append('caption',caption)
+
       formData.append('category',category)
+
 
       
       // formData.append('title',title)
@@ -71,6 +77,7 @@ function Upform(){
       category : window.location.search
     }
     console.log(pObj)
+
 
     axios.post('/api/bubble/dbpic',pObj).then(res=>{
       console.log(res)
@@ -104,7 +111,9 @@ function Upform(){
               <div className="col-xs-10 offset-xs-1 col-md-6 offset-md-3">
                   <div className="card">
                         <input id='title' name='title' type='text' placeholder="Title" value={title} onChange={handleDChange} />
+
                         <img id="upImg"src={upImg} alt="parent"/>
+
                         <textarea id='caption' name='caption' type='text' placeholder="Caption this" value={caption}onChange={handleDChange} />
                         <button id='addPic' onClick={addPic}>Add To Pictures</button>                      
                   </div>
@@ -115,4 +124,6 @@ function Upform(){
       </div>
   )
 }
+
 export default Upform
+
