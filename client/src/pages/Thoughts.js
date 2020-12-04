@@ -50,8 +50,13 @@ function Thoughts() {
                   </div>
 
 
-            ) : (
+            ) : ( 
+                    <div>
                     <h3 >No booksssssssssss saved</h3>
+                   
+                    <Link to ={"/bubbleform/"+category}><button>Add your bubble</button></Link>
+                    </div>
+
                 )
             
 
