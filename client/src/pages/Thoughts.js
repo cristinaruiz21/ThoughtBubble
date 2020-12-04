@@ -1,32 +1,65 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card'
+import API from "../utils/API";
+import {Link,useParams} from 'react-router-dom'
 
 function Thoughts() {
-    
-    const cardInfo = [
-        {image: "https://smartbear.com/smartbear/media/blog/wp/quality-history.jpg", title: "Thinking", text: "Today's class was difficult!" },
-        {image: "https://lh3.googleusercontent.com/proxy/IjsTVr_UmxwG5-JP-HI-H1zoVvihLhJ6QNq7btzUXwYz7ESsuHgelQkUM6vRWcxarQs63Y1X9feuxqSh3dy-cL4mFeu7xTc", title: "Bad Drivers", text: "Why is it that every car has a turn signal and no one uses it!" },
-        {image: "https://images.unsplash.com/photo-1554672723-b208dc85134f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", title: "Burning Money", text: "I just bought a macbook that I now have to buy more apple products just to connect it to everything!" },
-    ];
+    const [thought, setThought] = useState({})
+    const {category} = useParams()
 
-    const renderCard = (card, index) => {
-        return (
-            <Card key={index} className="box-thought">
-                <Card.Img variant="bottom"  src={card.image} className="img-thought"/>
-                <Card.Body>
-                    <Card.Title>{card.title}</Card.Title>
-                    <Card.Text>
-                        {card.text}
-                    </Card.Text>
-                </Card.Body>
-            </Card>
 
-        )
-    }
-    
+    useEffect(() => {
+      API.getBubbles()
+            .then(res => setThought(res.data))
+                // console.log(cards)}
+
+            .catch(err => console.log(err));
+
+    }, [])
+
+
+
     return (
-    <div className="grid-thought">{cardInfo.map(renderCard)}</div>
+
+      
+
+            
+            thought.length ? (
+                <div>
+                <div style={{ display: "flex", flexWrap: "wrap" }}>
+                
+                 
+                    {thought.filter(unique => unique.category===category).map(book => (
+
+
+                        <Card key={book._id} className="box-thought">
+                            <Card.Img variant="bottom" src={book.url  || "https://via.placeholder.com/150/0000FF/808080 ?Text=Digital.com"} className="img-thought" />
+                            <Card.Body>
+                                <Card.Title>{book.title}</Card.Title>
+                                <Card.Text>
+                                    {book.caption}
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+
+                    ))}
+                    
+
+                </div>
+                  <Link to ={"/bubbleform/"+category}><button>Add your bubble</button></Link>
+                  </div>
+
+
+            ) : (
+                    <h3 >No booksssssssssss saved</h3>
+                )
+            
+
+            
+
     )
+
+  
 
 }
 

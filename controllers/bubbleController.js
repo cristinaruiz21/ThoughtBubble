@@ -15,11 +15,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
     //function to create Bubble
-    create: function(req, res) {
+    create: function(data) {
         db.Bubble
-          .create(req.body)
-          .then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
+          .create(data)
+          .then(dbModel => dbModel)
+          .catch(err => console.log(err));
       },
       update: function(req, res) {
         db.Bubble
@@ -35,5 +35,27 @@ module.exports = {
           .then(dbModel => dbModel.remove())
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
+      },
+      findAll: function(req, res) {
+        db.Bubble
+          .find({})
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+      },
+      findById: function(req, res) {
+        db.Bubble
+          .findById(req.params.id)
+          .then(dbModel => {
+            console.log(dbModel)
+            res.json(dbModel)
+          })
+          .catch(err => res.status(422).json(err));
+      },
+      update: function(req, res) {
+        db.Bubble
+          .findOneAndUpdate({ _id: req.params.id }, req.body)
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
       }
+      
 };
