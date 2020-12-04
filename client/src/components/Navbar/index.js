@@ -13,40 +13,6 @@ function Navbar(){
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
     
-        {/* <li className="nav-item">
-            <Link
-              to="/home"
-              className={
-                window.location.pathname === "/" || window.location.pathname === "/home"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-            Home
-            </Link>
-          </li>
-          <li class="nav-item ">
-            <Link className="navbar-brand" to="/bubbleform" > TestingBubbleF</Link>
-
-            </li>
-          <li className="nav-item">
-            <Link
-              to="/bubbleform"
-              className={window.location.pathname === "/bubbleform" ? "nav-link active" : "nav-link"}
-            >
-              BubbleForm
-            </Link>
-          </li>
-      
-          <li className="nav-item">
-            <Link
-              to="/login"
-              className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
-            >
-              Logout
-            </Link>
-           
-          </li> */}
           <li class="nav-item ">
             <Link className="navbar-brand" to="/home" >Home</Link>
 

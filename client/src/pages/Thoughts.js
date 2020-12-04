@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card'
 import API from "../utils/API";
 import {Link,useParams} from 'react-router-dom';
-import Jumbotron from "../components/Jumbotron";
+import Button from "../components/Button";
+
 
 function Thoughts() {
     const [thought, setThought] = useState({})
@@ -28,10 +29,7 @@ function Thoughts() {
             thought.length ? (
                 <div>
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
-                <Jumbotron>
-                    <h1>Everyday Thoughts</h1>
-                </Jumbotron>
-                 
+            
                     {thought.filter(unique => unique.category===category).map(book => (
                         <Card key={book._id} className="box-thought">
                             <Card.Img variant="bottom" src={book.url  || "https://via.placeholder.com/150/0000FF/808080 ?Text=Digital.com"} className="img-thought" />
@@ -47,7 +45,7 @@ function Thoughts() {
                     
 
                 </div>
-                  <Link to ={"/bubbleform/"+category}><button>Add your bubble</button></Link>
+                  <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md"> + Add new bubble</Button></Link>
                   </div>
 
 

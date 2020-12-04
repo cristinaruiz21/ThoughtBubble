@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card'
 import API from "../utils/API";
-import Jumbotron from "../components/Jumbotron";
 
 
 function Thoughts() {
@@ -24,9 +23,7 @@ function Thoughts() {
         
             thought.length ? (
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
-                    <Jumbotron>
-                        <h1>Fitness</h1>
-                    </Jumbotron>
+                   
                     {thought.map(book => (
 
 

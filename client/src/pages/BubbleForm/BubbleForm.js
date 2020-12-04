@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import axios from 'axios'
+import Button from "../../components/Button";
 
 // import patient from '../utils/patient.gif'
 import {Redirect,useParams} from 'react-router-dom'
@@ -92,14 +93,14 @@ function Upform(){
           <div className="col-sm-10 offset-sm-1 col-md-6 offset-md-3">  
             < div  className="card">
               <h1>Upload Image</h1>
-              <p>please use optimized photos to keep size down</p>
-              <input id='name' name='name' type='text' placeholder="Name" value={name} onChange={handleDChange} />
+              <p>Please select a photo from your computer</p>
               <label id="imgI">
               <input  type='file' accept="image/*" name="file" encType="multipart/form-data" onChange={handleIChange} />
               </label>
+              <input id='name' name='name' type='text' placeholder="Title" value={name} onChange={handleDChange} />
               {/* <input id="imgI" type='file' accept="image/*" name="file" encType="multipart/form-data" onChange={handleIChange} /> */}
-              <textarea id='caption' name='caption' type='text' placeholder="Caption this" value={caption}onChange={handleDChange} />
-              <button id="upload"type='button'  onClick={handlefile}>Upload</button>
+              <textarea id='caption' name='caption' type='text' placeholder="Caption..." value={caption}onChange={handleDChange} />
+              <Button className="btn btn-primary btn-md btn-block board" id="upload"type='button'  onClick={handlefile}>Upload</Button>
             </div>
           </div>
         </div>:
