@@ -2,8 +2,8 @@ import React from "react"
 import Button from "../components/Button"
 import {Container, Row} from "../components/Grid"
 import {Link} from "react-router-dom"
-import API from "../utils/API"
-import thoughts from "./Thoughts"
+// import API from "../utils/API"
+// import thoughts from "./Thoughts"
 
 
 
@@ -12,7 +12,7 @@ function Home ()
 
 return(
     <div>
-    <h4  style={{background : "green", textAlign:"center",color:"white",}}>Select your Bubble  Board</h4>
+    <h4  style={{background : "green", textAlign:"center",color:"white",margin:30, padding:10,borderRadius: 20}}>Select your Bubble  Board</h4>
 
         <Container style={{marginTop:30}} >
             <Row>
