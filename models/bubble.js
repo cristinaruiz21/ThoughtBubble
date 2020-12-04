@@ -5,6 +5,7 @@ const bubbleSchema = new Schema({
   title: { type: String, required: true },
   caption: { type: String, required: true },
   date: { type: Date, default: Date.now },
+  category : {type: String},
   url: {type: String}
 });
 

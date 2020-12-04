@@ -57,15 +57,20 @@ router.post("/imgup", upload.single('file'),function(req,res, next){
       const obj={
         title:req.body.name,
         caption:req.body.caption,
+
+        category : req.body.category,
+
         url:image.url,
       }
      
         let result= bubbleController.create(obj)
         console.log(result)
         res.json(result)
+
       
       // console.log(dbPost())
       
+
     })
     .then(function (res) {
       console.log('** photo saved');

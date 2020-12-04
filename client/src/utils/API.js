@@ -1,7 +1,9 @@
 import axios from "axios";
 
 export default {
-
+  getBubbles: function() {
+    return axios.get("/api/bubble");
+  },
 //   // Gets the bubble based on given id
   getBubble: function(id) {
     return axios.get("/api/bubbles/" + id);
