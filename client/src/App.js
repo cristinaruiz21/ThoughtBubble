@@ -20,6 +20,8 @@ function App(){
       <Route exact path="/home" component={Home}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/bubbleform/:category" component={BubbleForm}/>
+      <Route exact path="/bubbleform/" component={BubbleForm}/>
+
       <Route exact path="/signup" component={Signup}/>
       {/* <Route exact path="/home/fitn" component={Fitness}/>
       <Route exact path="/home/:category" component={Food}/> */}

@@ -51,7 +51,7 @@ function Thoughts() {
 
 
             ) : (
-                    <h3 >No books saved</h3>
+                    <h3 >No booksssssssssss saved</h3>
                 )
             
 
