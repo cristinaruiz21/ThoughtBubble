@@ -31,7 +31,6 @@ class Navbar extends Component{
           </li>
           <li class="nav-item ">
             <Link className="navbar-brand" to="/bubbleform" > TestingBubbleF</Link>
-
             </li>
           <li className="nav-item">
             <Link

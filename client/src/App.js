@@ -123,7 +123,6 @@ class App extends Component {
           {/* <Route
           exact path="/"
           component={Login} />
-
           */}
             <Route
               path="/"
