@@ -45,27 +45,27 @@ import axios from 'axios'
 import Home from "./pages/Home"
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = {
+  // constructor() {
+  //   super()
+    state = {
       loggedIn: false,
       username: null
     }
 
-    this.getUser = this.getUser.bind(this)
-    this.componentDidMount = this.componentDidMount.bind(this)
-    this.updateUser = this.updateUser.bind(this)
-  }
+    // this.getUser = this.getUser.bind(this)
+    // this.componentDidMount = this.componentDidMount.bind(this)
+    // this.updateUser = this.updateUser.bind(this)
+  // }
 
   componentDidMount() {
     this.getUser()
   }
 
-  updateUser(userObject) {
+  updateUser = (userObject)=> {
     this.setState(userObject)
   }
 
-  getUser() {
+  getUser =() =>{
     axios.get('/user/').then(response => {
       console.log('Get user response: ')
       console.log(response.data)
@@ -86,11 +86,20 @@ class App extends Component {
     })
   }
 
+
+  logoutUser=()=>{
+    this.setState({
+      loggedIn : false,
+      username :null
+    })
+  }
+
+
   render() {
     return (
       <Router>
         <div className="App">
-          <Navbar />
+          <Navbar logout={this.logoutUser}/>
           <Switch >
           {/* <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} /> */}
           {/* greet user if logged in: */}
@@ -104,7 +113,7 @@ class App extends Component {
             <Route exact path="/bubbleform/:category" component={BubbleForm} />
             <Route exact path="/bubbleform/" component={BubbleForm} />
             <Route  path="/home/:category" component={Thoughts} />
-            <Route exact path="/login" component={Login}/>
+            <Route exact path="/login" component={Login} />
             </Switch>
 
         </div>
