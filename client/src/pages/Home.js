@@ -21,10 +21,10 @@ return(
                 <div className="col-md-6 offset-md-3">
                
 
-   <Link to={"/home/Thoughts"} ><Button className="btn btn-primary btn-lg btn-block board bubble">Everyday Thoughts</Button></Link><br />
-   <Link to={"/home/Fitness"} ><Button className="btn btn-primary btn-lg btn-block board bubble">Fitness</Button></Link><br />
+   <Link to={"/home/Thoughts"} ><Button className="btn btn-primary btn-lg btn-block board bubble"><span>Everyday Thoughts</span></Button></Link><br />
+   <Link to={"/home/Fitness"} ><Button className="btn btn-primary btn-lg btn-block board bubble"><span>Fitness</span></Button></Link><br />
 
-   <Link to={"/home/Food"} ><Button className="btn btn-primary btn-lg btn-block board bubble" >Food</Button></Link><br />
+   <Link to={"/home/Food"} ><Button className="btn btn-primary btn-lg btn-block board bubble"><span>Food</span></Button></Link><br />
 
 
     </div>
