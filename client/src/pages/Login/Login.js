@@ -1,43 +1,106 @@
 import React, { Component } from 'react'
-import logo from "../Assets/bubble-logo.png";
-import { Row, Container } from "../../components/Grid";
-import "./Login.css"
+import { Redirect } from 'react-router-dom'
+import axios from 'axios'
 
+class LoginForm extends Component {
+    constructor() {
+        super()
+        this.state = {
+            username: '',
+            password: '',
+            redirectTo: null
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+  
+    }
 
-class Login extends Component {
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit(event) {
+        event.preventDefault()
+        console.log('handleSubmit')
+
+        axios
+            .post('/user/login', {
+                username: this.state.username,
+                password: this.state.password
+            })
+            .then(response => {
+                console.log('login response: ')
+                console.log(response)
+                if (response.status === 200) {
+                    // update App.js state
+                    this.props.updateUser({
+                        loggedIn: true,
+                        username: response.data.username
+                    })
+                    // update the state to redirect to home
+                    this.setState({
+                        redirectTo: '/'
+                    })
+                }
+            }).catch(error => {
+                console.log('login error: ')
+                console.log(error);
+                
+            })
+    }
+
     render() {
-        return (
-            <Container>
-                <Row>
-                    <div className="loginCard">
-                        <div className="card col-md-6 mx-auto col-md-offset-3">
-                        <h2 className="text-center">Thought Bubble</h2>
-                            <div>
-                                <img className="logo" src={logo} alt="bubble-logo" />
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
+            return (
+                <div>
+                    <h4>Login</h4>
+                    <form className="form-horizontal">
+                        <div className="form-group">
+                            <div className="col-1 col-ml-auto">
+                                <label className="form-label" htmlFor="username">Username</label>
                             </div>
-                            <h6 className="text-muted text-center">Log in with your email and password that you entered during sign up</h6>
-                            <form>
-                                <div className="form-group">
-                                    <label for="InputEmail"></label>
-                                    <input type="email" class="form-control" id="email-input" placeholder="Email" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="InputPassword"></label>
-                                    <input type="password" class="form-control" id="password-input" placeholder="Password" />
-                                </div>
-                                <div className="text-center">
-                                    <button type="submit" className="btn-primary text-center" id="submit">Login</button>
-                                </div>
-                            </form>
-                            <div className="text-center">
-                                <p className="text-muted">Or if you dont have an account sign up <a href="/signup">here</a></p>
+                            <div className="col-3 col-mr-auto">
+                                <input className="form-input"
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Username"
+                                    value={this.state.username}
+                                    onChange={this.handleChange}
+                                />
                             </div>
                         </div>
-                    </div>
-                </Row>
-            </Container>
-
-        )
+                        <div className="form-group">
+                            <div className="col-1 col-ml-auto">
+                                <label className="form-label" htmlFor="password">Password: </label>
+                            </div>
+                            <div className="col-3 col-mr-auto">
+                                <input className="form-input"
+                                    placeholder="password"
+                                    type="password"
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div className="form-group ">
+                            <div className="col-7"></div>
+                            <button
+                                className="btn btn-primary col-1 col-mr-auto"
+                               
+                                onClick={this.handleSubmit}
+                                type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            )
+        }
     }
 }
-export default Login
+
+export default LoginForm
