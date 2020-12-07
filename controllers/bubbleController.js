@@ -18,9 +18,13 @@ module.exports = {
           .catch(err => res.status(422).json(err));
       },
       findAll: function(req, res) {
+        console.log(req.user)
+
         db.Bubble
-          .find({})
-          .then(dbModel => res.json(dbModel))
+          .find({author : req.user.username})
+          .then(dbModel => res.json(dbModel),
+
+          console.log(req.body))
           .catch(err => res.status(422).json(err));
       },
       findById: function(req, res) {
