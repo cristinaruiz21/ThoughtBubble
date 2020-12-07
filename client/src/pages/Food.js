@@ -24,6 +24,7 @@ function Thoughts() {
         
             thought.length ? (
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
+                
                     {thought.map(book => (
 
 
@@ -41,7 +42,7 @@ function Thoughts() {
                 </div>
 
             ) : (
-                    <h3 >No books saved</h3>
+                    <h3 >No bubbles saved</h3>
                 )
         
 
