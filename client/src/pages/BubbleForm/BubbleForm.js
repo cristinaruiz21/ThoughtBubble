@@ -86,7 +86,7 @@ function Upform(){
   }
   return(
       <div>
-        {redirect?<Redirect push to='/'/>:<div></div>}
+        {redirect?<Redirect push to='/home'/>:<div></div>}
         {showUp?
         <div className="row space">
           <div className="col-sm-10 offset-sm-1 col-md-6 offset-md-3">  

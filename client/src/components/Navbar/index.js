@@ -1,8 +1,12 @@
-import React from "react"
+import React, { Component } from "react"
 import {Link} from "react-router-dom";
 import "./style.css"
 
-function Navbar(){
+class Navbar extends Component{
+  render()
+  {
+    console.log(this.props)
+
     return(
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
       <a class="navbar-brand" href="/home">Thought Bubble</a>
@@ -56,12 +60,17 @@ function Navbar(){
 
             </li>
             <li class="nav-item ">
-            <Link className="navbar-brand" to="/login" > Logout</Link>
+            <Link className="navbar-brand" to="/" onClick={this.props.logout} > Logout</Link>
+
+            </li>
+            <li class="nav-item ">
+            <Link className="navbar-brand" to="/signup" > signup</Link>
 
             </li>
        </ul>
        </div>
       </nav>
     )
+        }
 }
 export default Navbar
