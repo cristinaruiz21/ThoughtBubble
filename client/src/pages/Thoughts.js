@@ -12,11 +12,7 @@ function Thoughts() {
 
 
     useEffect(() => {
-        // API.getBubbles()
-        //     .then(res => setThought(res.data))
-        //     // console.log(cards)}
-
-        //     .catch(err => console.log(err));
+      
         loadBubbles()
 
 
