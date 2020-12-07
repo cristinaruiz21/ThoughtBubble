@@ -35,6 +35,9 @@ function Thoughts() {
                                     {book.caption}
                                 </Card.Text>
                             </Card.Body>
+                            <span className="remove">
+                                𝘅
+                            </span>
                         </Card>
 
                     ))}

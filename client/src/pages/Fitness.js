@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 import API from "../utils/API";
 
 
@@ -8,7 +9,7 @@ function Thoughts() {
 
 
     useEffect(() => {
-      API.getBubbles()
+        API.getBubbles()
             .then(res => setThought(res.data))
 
             .catch(err => console.log(err));
@@ -19,34 +20,38 @@ function Thoughts() {
 
     return (
 
-    
-        
-            thought.length ? (
-                <div style={{ display: "flex", flexWrap: "wrap" }}>
-                    {thought.map(book => (
 
 
-                        <Card key={book._id} className="box-thought">
-                            <Card.Img variant="bottom" src={book.url  || "https://via.placeholder.com/150/0000FF/808080 ?Text=Digital.com"} className="img-thought" />
-                            <Card.Body>
-                                <Card.Title>{book.title}</Card.Title>
-                                <Card.Text>
-                                    {book.caption}
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
+        thought.length ? (
+            <div style={{ display: "flex", flexWrap: "wrap" }}>
+                {thought.map(book => (
 
-                    ))}
-                </div>
 
-            ) : (
-                    <h3 >No books saved</h3>
-                )
-        
+                    <Card key={book._id} className="box-thought">
+                        <Card.Img variant="bottom" src={book.url || "https://via.placeholder.com/150/0000FF/808080 ?Text=Digital.com"} className="img-thought" />
+                        <Card.Body>
+                            <Card.Title>{book.title}</Card.Title>
+                            <Card.Text>
+                                {book.caption}
+                            </Card.Text>
+                        </Card.Body>
+                        <span className="remove">
+                                𝘅
+                            </span>
+                    </Card>
+                   
+                ))}
+            
+            </div>
+
+        ) : (
+                <h3 >No books saved</h3>
+            )
+
 
     )
 
- 
+
 
 }
 
