@@ -61,6 +61,8 @@ router.post("/imgup", upload.single('file'),function(req,res, next){
         category : req.body.category,
 
         url:image.url,
+      author :  req.user.username
+        // check : "checking24"
       }
      
         let result= bubbleController.create(obj)
