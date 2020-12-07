@@ -23,8 +23,8 @@ router.route("/")
 
 router
   .route("/:id")
-  .get(bubbleController.findById)
-  .put(bubbleController.update)
+  // .get(bubbleController.findById)
+  // .put(bubbleController.update)
   .delete(bubbleController.remove);
 ////////create reference to img url in mongodb
 router.route('/dbpic')
