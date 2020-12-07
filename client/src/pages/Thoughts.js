@@ -12,13 +12,25 @@ function Thoughts() {
 
 
     useEffect(() => {
-        API.getBubbles()
-            .then(res => setThought(res.data))
-            // console.log(cards)}
+      
+        loadBubbles()
 
-            .catch(err => console.log(err));
 
     }, [])
+
+function loadBubbles() {
+    API.getBubbles()
+    .then(res => setThought(res.data))
+    .catch(err => console.log(err));
+}
+
+
+    function onDelete(id) {
+        API.deleteBubble(id)
+        .then(res => loadBubbles())
+        .catch(err => console.log(err));
+
+    }
 
 
 
@@ -30,10 +42,12 @@ function Thoughts() {
         thought.length ? (
             <div>
                 <Jumbotron className="bubble-board-jumbo">{category}</Jumbotron>
-                <Link to={"/bubbleform/" + category}><Button className="btn btn-primary btn-md add"> + New Bubble</Button></Link>
+                <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md add"> + New Bubble</Button></Link>
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
 
+
                     {thought.filter(unique => unique.category === category).map(book => (
+
 
                         <Card key={book._id} className="box-thought">
                             <Card.Img variant="bottom" src={book.url || "https://via.placeholder.com/150/0000FF/808080 ?Text=Digital.com"} className="img-thought" />
@@ -43,6 +57,9 @@ function Thoughts() {
                                     {book.caption}
                                 </Card.Text>
                             </Card.Body>
+                            <span onClick ={() => onDelete(book._id)} className="remove">
+                                𝘅
+                            </span>
                         </Card>
 
                     ))}
@@ -57,14 +74,13 @@ function Thoughts() {
         ) : (
                 <div>
                     <h3 >No bubbles saved</h3>
-
-                    <Link to={"/bubbleform/" + category}><Button className="btn btn-primary btn-md"> + New Bubble</Button></Link>
+                    <Link to={"/bubbleform/" + category}><button>Add your bubble</button></Link>
                 </div>
 
             )
 
 
-        
+
 
     )
 

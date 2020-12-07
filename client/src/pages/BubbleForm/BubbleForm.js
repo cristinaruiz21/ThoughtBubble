@@ -3,7 +3,6 @@ import axios from 'axios'
 import Button from "../../components/Button";
 import "./BubbleForm.css";
 
-// import patient from '../utils/patient.gif'
 import {Redirect,useParams} from 'react-router-dom'
 
 
@@ -44,10 +43,7 @@ function Upform(){
     const handlefile=(event)=>{
       event.preventDefault()
       
-      // let data={
-      //   name:name,
-      //   caption:caption
-      // }
+      
     //################## package file info and send it back
       var formData = new FormData();
       formData.append('file',imgData );
@@ -58,7 +54,6 @@ function Upform(){
 
 
       
-      // formData.append('title',title)
       /////// function for viewing form data
       for (var p of formData) {
         console.log(p);
@@ -68,7 +63,6 @@ function Upform(){
         setUp(response.data)
         setRedirect(true)
       })
-      //##################
   }
   //////////add url caption and title to db
   const addPic=()=>{
