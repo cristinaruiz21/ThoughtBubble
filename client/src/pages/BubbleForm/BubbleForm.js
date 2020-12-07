@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import axios from 'axios'
 
-// import patient from '../utils/patient.gif'
 import {Redirect,useParams} from 'react-router-dom'
 
 
@@ -42,10 +41,7 @@ function Upform(){
     const handlefile=(event)=>{
       event.preventDefault()
       
-      // let data={
-      //   name:name,
-      //   caption:caption
-      // }
+      
     //################## package file info and send it back
       var formData = new FormData();
       formData.append('file',imgData );
@@ -56,7 +52,6 @@ function Upform(){
 
 
       
-      // formData.append('title',title)
       /////// function for viewing form data
       for (var p of formData) {
         console.log(p);
@@ -66,7 +61,6 @@ function Upform(){
         setUp(response.data)
         setRedirect(true)
       })
-      //##################
   }
   //////////add url caption and title to db
   const addPic=()=>{
@@ -97,7 +91,6 @@ function Upform(){
               <label id="imgI">
               <input  type='file' accept="image/*" name="file" encType="multipart/form-data" onChange={handleIChange} />
               </label>
-              {/* <input id="imgI" type='file' accept="image/*" name="file" encType="multipart/form-data" onChange={handleIChange} /> */}
               <textarea id='caption' name='caption' type='text' placeholder="Caption this" value={caption}onChange={handleDChange} />
               <button id="upload"type='button'  onClick={handlefile}>Upload</button>
             </div>
