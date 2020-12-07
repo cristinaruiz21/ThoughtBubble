@@ -20,8 +20,7 @@ function Thoughts() {
 
     }, [])
 
-
-
+   
     return (
 
       
@@ -57,7 +56,6 @@ function Thoughts() {
             ) : ( 
                     <div>
                     <h3 >No bubbles saved</h3>
-                   
                     <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md"> + New Bubble</Button></Link>
                     </div>
 
