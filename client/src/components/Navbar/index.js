@@ -60,7 +60,11 @@ class Navbar extends Component{
 
             </li>
             <li class="nav-item ">
-            <Link className="navbar-brand" to="/login" onClick={this.props.logout} > Logout</Link>
+            <Link className="navbar-brand" to="/" onClick={this.props.logout} > Logout</Link>
+
+            </li>
+            <li class="nav-item ">
+            <Link className="navbar-brand" to="/signup" > signup</Link>
 
             </li>
        </ul>
