@@ -1,12 +1,13 @@
-.btn-sm{
-    margin : 100;
-    color : "green"
-}
-
 .parent{
     marginTop : 30
 }
 
 .neweffects{
     
+}
+
+.upload{
+    background-color: rgb(135, 164, 228)!important;
+    border-radius: 10px!important;
+    border-color: rgb(135, 164, 228)!important;
 }

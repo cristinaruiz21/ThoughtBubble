@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card'
 import API from "../utils/API";
 import {Link,useParams} from 'react-router-dom';
 import Button from "../components/Button";
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
 
 function Thoughts() {
@@ -28,9 +29,12 @@ function Thoughts() {
             
             thought.length ? (
                 <div>
+                    <Jumbotron className="bubble-board-jumbo">{category}</Jumbotron>
+                    <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md add"> + Add new bubble</Button></Link>
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
-            
+        
                     {thought.filter(unique => unique.category===category).map(book => (
+                        
                         <Card key={book._id} className="box-thought">
                             <Card.Img variant="bottom" src={book.url  || "https://via.placeholder.com/150/0000FF/808080 ?Text=Digital.com"} className="img-thought" />
                             <Card.Body>
@@ -45,15 +49,16 @@ function Thoughts() {
                     
 
                 </div>
-                  <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md"> + Add new bubble</Button></Link>
+                
+                  
                   </div>
 
 
             ) : ( 
                     <div>
-                    <h3 >No booksssssssssss saved</h3>
+                    <h3 >No bubbles saved</h3>
                    
-                    <Link to ={"/bubbleform/"+category}><button>Add your bubble</button></Link>
+                    <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md">Add your bubble</Button></Link>
                     </div>
 
                 )

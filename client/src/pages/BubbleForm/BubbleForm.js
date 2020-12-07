@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import axios from 'axios'
 import Button from "../../components/Button";
+import "./BubbleForm.css";
 
 // import patient from '../utils/patient.gif'
 import {Redirect,useParams} from 'react-router-dom'
@@ -99,8 +100,10 @@ function Upform(){
               </label>
               <input id='name' name='name' type='text' placeholder="Title" value={name} onChange={handleDChange} />
               {/* <input id="imgI" type='file' accept="image/*" name="file" encType="multipart/form-data" onChange={handleIChange} /> */}
-              <textarea id='caption' name='caption' type='text' placeholder="Caption..." value={caption}onChange={handleDChange} />
-              <Button className="btn btn-primary btn-md btn-block board" id="upload"type='button'  onClick={handlefile}>Upload</Button>
+              <textarea id='caption' name='caption' type='text' placeholder="Caption..." value={caption}onChange={handleDChange} rows="8" />
+              <div className="col-md-8 offset-md-2 text-center">
+              <Button className="btn btn-primary btn-block btn-md upload" id="upload"type='button'  onClick={handlefile}>Upload</Button>
+              </div>
             </div>
           </div>
         </div>:

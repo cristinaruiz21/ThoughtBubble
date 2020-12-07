@@ -1,11 +1,11 @@
 import React from "react";
-import "./style.css";
 
+// Destructuring the type, className, children and onClick props, applying them to the button element
 function Jumbotron(props) {
   return (
-    <div className="jumbotron text-center" id="jumbotron">
-      <h1>Select Your Bubble Board</h1>
-    </div>
+    <jumbotron className={props.className}>
+      {props.children}
+    </jumbotron>
   );
 }
 
