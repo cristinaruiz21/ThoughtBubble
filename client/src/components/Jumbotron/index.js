@@ -1,12 +1,12 @@
 import React from "react";
 
 // Destructuring the type, className, children and onClick props, applying them to the button element
-function Button(props) {
+function Jumbotron(props) {
   return (
-    <button onClick={props.onClick} className={props.className}>
+    <jumbotron className={props.className}>
       {props.children}
-    </button>
+    </jumbotron>
   );
 }
 
-export default Button;
+export default Jumbotron;
