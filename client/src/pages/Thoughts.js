@@ -9,13 +9,29 @@ function Thoughts() {
 
 
     useEffect(() => {
-        API.getBubbles()
-            .then(res => setThought(res.data))
-            // console.log(cards)}
+        // API.getBubbles()
+        //     .then(res => setThought(res.data))
+        //     // console.log(cards)}
 
-            .catch(err => console.log(err));
+        //     .catch(err => console.log(err));
+        loadBubbles()
+
 
     }, [])
+
+function loadBubbles() {
+    API.getBubbles()
+    .then(res => setThought(res.data))
+    .catch(err => console.log(err));
+}
+
+
+    function onDelete(id) {
+        API.deleteBubble(id)
+        .then(res => loadBubbles())
+        .catch(err => console.log(err));
+
+    }
 
 
 
@@ -40,7 +56,7 @@ function Thoughts() {
                                     {book.caption}
                                 </Card.Text>
                             </Card.Body>
-                            <span className="remove">
+                            <span onClick ={() => onDelete(book._id)} className="remove">
                                 𝘅
                             </span>
                         </Card>
