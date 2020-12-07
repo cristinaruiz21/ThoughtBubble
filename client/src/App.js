@@ -47,25 +47,25 @@ import Home from "./pages/Home"
 class App extends Component {
   // constructor() {
   //   super()
-    state = {
-      loggedIn: false,
-      username: null
-    }
+  state = {
+    loggedIn: false,
+    username: null
+  }
 
-    // this.getUser = this.getUser.bind(this)
-    // this.componentDidMount = this.componentDidMount.bind(this)
-    // this.updateUser = this.updateUser.bind(this)
+  // this.getUser = this.getUser.bind(this)
+  // this.componentDidMount = this.componentDidMount.bind(this)
+  // this.updateUser = this.updateUser.bind(this)
   // }
 
   componentDidMount() {
     this.getUser()
   }
 
-  updateUser = (userObject)=> {
+  updateUser = (userObject) => {
     this.setState(userObject)
   }
 
-  getUser =() =>{
+  getUser = () => {
     axios.get('/user/').then(response => {
       console.log('Get user response: ')
       console.log(response.data)
@@ -87,10 +87,10 @@ class App extends Component {
   }
 
 
-  logoutUser=()=>{
+  logoutUser = () => {
     this.setState({
-      loggedIn : false,
-      username :null
+      loggedIn: false,
+      username: null
     })
   }
 
@@ -99,31 +99,26 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Navbar logout={this.logoutUser}/>
+          <Navbar logout={this.logoutUser} />
           <Switch >
-          {/* <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} /> */}
-          {/* greet user if logged in: */}
-          {this.state.loggedIn &&
-          
-          <div>
-            <Switch>
-            <Route exact from ="/" to="/home" component={Home} />
-                 <Route exact path="/home" component={Home}/>
+            {/* <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} /> */}
+            {/* greet user if logged in: */}
+            {this.state.loggedIn &&
 
-            <Route exact path="/bubbleform/:category" component={BubbleForm} />
-            <Route exact path="/bubbleform/" component={BubbleForm} />
-            <Route  path="/home/:category" component={Thoughts} />
-            <Route exact path="/login" component={Login} />
-            </Switch>
+              <div>
+                <Switch>
+                  <Route exact from="/" to="/home" component={Home} />
+                  <Route exact path="/home" component={Home} />
 
-        </div>
-        
-          }
-          {/* Routes to different components */}
-          {/* <Route
-          exact path="/"
-          component={Login} />
-          */}
+                  <Route exact path="/bubbleform/:category" component={BubbleForm} />
+                  <Route exact path="/bubbleform/" component={BubbleForm} />
+                  <Route path="/home/:category" component={Thoughts} />
+                  <Route exact path="/signup" component={Signup} />
+                </Switch>
+
+              </div>
+
+            }
             <Route
               path="/"
               render={() =>
@@ -136,7 +131,7 @@ class App extends Component {
               render={() =>
                 <Signup />}
             />
-        
+
 
           </Switch>
         </div>
