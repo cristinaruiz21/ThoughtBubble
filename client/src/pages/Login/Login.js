@@ -9,7 +9,10 @@ class LoginForm extends Component {
             username: '',
             password: '',
             error: false,
-            redirectTo: null
+
+            redirectTo: null,
+            
+
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -47,10 +50,12 @@ class LoginForm extends Component {
                 }
             }).catch(error => {
                 console.log('login error: ')
-                console.log(error);
+
                 this.setState({
                     error: true
-                })
+                  })
+                  
+
                 
             })
     }

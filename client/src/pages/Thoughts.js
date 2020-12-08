@@ -77,16 +77,13 @@ function loadBubbles() {
                 </div>
 
 
-            </div>
 
-
-        ) : (
-                <div>
+            ) : ( 
+                    <div>
                     {/* <h3 >No bubbles saved</h3>
-                    {/* <Link to={"/bubbleform/" + category}><button>Add your bubble</button></Link> */}
-                    {/* <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md add"> + New Bubble</Button></Link> */} 
-                    <Jumbotron className="bubble-board-jumbo">{category}</Jumbotron>
-                <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md add"> + Add Bubble</Button></Link>
+                    <Link to={"/bubbleform/" + category}><button>Add your bubble</button></Link> */}
+                <Jumbotron className="bubble-board-jumbo">{category}</Jumbotron>
+                <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md add"> + New Bubble</Button></Link>
 
 
                 </div>
