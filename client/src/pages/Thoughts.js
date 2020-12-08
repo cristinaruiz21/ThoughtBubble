@@ -4,6 +4,7 @@ import API from "../utils/API";
 import { Link, useParams } from 'react-router-dom';
 import Button from "../components/Button";
 import Jumbotron from 'react-bootstrap/Jumbotron'
+var moment = require('moment'); // require
 
 
 function Thoughts() {
@@ -32,13 +33,17 @@ function loadBubbles() {
 
     }
 
-
-
+    function formatDate(date){
+       var formattedDate =  moment(date).format('ll');
+       console.log(formattedDate);
+       return formattedDate;
+    }
+   
     return (
+   
+<div>
 
-
-
-
+{
         thought.length ? (
             <div>
                 <Jumbotron className="bubble-board-jumbo">{category}</Jumbotron>
@@ -47,11 +52,11 @@ function loadBubbles() {
 
 
                     {thought.filter(unique => unique.category === category).map(book => (
+                       
 
-
-                        <Card key={book._id} className="box-thought">
+                        <Card key={book._id} className="box-thought card text-white bg-info"  >
                             <Card.Img variant="bottom" src={book.url || "https://via.placeholder.com/150/0000FF/808080 ?Text=Digital.com"} className="img-thought" />
-                            <Card.Body>
+                            <Card.Body >
                                 <Card.Title>{book.title}</Card.Title>
                                 <Card.Text>
                                     {book.caption}
@@ -60,6 +65,10 @@ function loadBubbles() {
                             <span onClick ={() => onDelete(book._id)} className="remove">
                                 𝘅
                             </span>
+                           
+                            <span class="shadow__box" id="drop-shadow" classname ="date">{formatDate(book.date)}</span>
+
+                            
                         </Card>
 
                     ))}
@@ -78,6 +87,12 @@ function loadBubbles() {
                 </div>
 
             )
+}
+
+</div>
+
+
+
 
 
 
