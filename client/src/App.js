@@ -12,7 +12,7 @@ import Welcome from "./pages/Welcome"
 
 import React, { Component } from 'react';
 import axios from 'axios'
-
+import Footer from './components/Footer'
 import Home from "./pages/Home"
 
 class App extends Component {
@@ -105,7 +105,7 @@ class App extends Component {
           />
 
 
-
+          <Footer/>
         </div>
       </Switch>
      </Router>
