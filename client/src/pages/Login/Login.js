@@ -8,6 +8,7 @@ class LoginForm extends Component {
         this.state = {
             username: '',
             password: '',
+            error: false,
             redirectTo: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -47,6 +48,9 @@ class LoginForm extends Component {
             }).catch(error => {
                 console.log('login error: ')
                 console.log(error);
+                this.setState({
+                    error: true
+                })
                 
             })
     }
@@ -95,7 +99,10 @@ class LoginForm extends Component {
                                
                                 onClick={this.handleSubmit}
                                 type="submit">Login</button>
+
                         </div>
+                        {this.state.error && <div className=" errormsg col-md-6 offset-md-3 ">Invalid Credentials, Please Try again!!</div>}
+
                     </form>
                 </div>
             )

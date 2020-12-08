@@ -9,7 +9,7 @@ class Signup extends Component {
 			username: '',
 			password: '',
 			confirmPassword: '',
-			redirectTo: null
+			redirectTo: null,
 
 
 		}
@@ -43,7 +43,7 @@ class Signup extends Component {
 					// 	redirectTo: '/home'
 					// })
 				} else {
-					console.log('username already taken')
+					console.log("username is already taken")
 				}
 			}).catch(error => {
 				console.log('signup error: ')
@@ -99,6 +99,7 @@ render() {
 						type="submit"
 					>Sign up</button>
 				</div>
+
 			</form>
 		</div>
 
