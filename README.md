@@ -35,7 +35,7 @@
  
  
 # Heroku
-https://github.com/cristinaruiz21/ThoughtBubble
+ https://thought-bubble-0.herokuapp.com/
 
 
 
