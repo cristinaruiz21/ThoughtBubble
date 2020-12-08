@@ -3,7 +3,7 @@
     border-radius: 10px 10px;
     overflow: hidden;
     height: 325px;
-    width: 325px;
+    width: 280px;
     max-height: 35vh;
     -webkit-box-shadow: 0px 12px 18px -6px rgba(0,0,0,0.3);
     box-shadow: 0px 12px 18px -6px rgba(0,0,0,0.3);
@@ -134,8 +134,8 @@
   }
   
   .remove {
-    color: white;
-    font-size: 20px;
+    color: red;
+    font-size: 30px;
     position: absolute;
     top: -10px;
     right: 5px;
@@ -143,5 +143,53 @@
   }
   
   .remove:hover {
-    color: black;
+    color: rgb(223, 50, 50);
   }
+  .date{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: -10px;
+    left: -5px;
+    cursor: pointer;
+  }
+  *, *:before, *:after {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+  }
+  
+  .wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8eaec;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .shadow {
+    padding: 12px;
+  }
+  .shadow__box {
+    width: 50px;
+    height: 50px;
+    /* position: relative; */
+    border-radius: 15%;
+    background:#5fbbec;
+     margin: 5px; 
+    margin-bottom: 20px;
+  }
+  .shadow__box#drop-shadow {
+    box-shadow:  8px 8px 19px #4f9bc4, 
+             -8px -8px 19px #6fdbff;
+}
+  
+  /* .card{
+    border-radius: 10px !important;
+    border : 1px solid rgb(128, 62, 0);
+    width : 280px !important
+  } */
