@@ -9,10 +9,10 @@ import Signup from "./pages/Signup/Signup.js"
 import Thoughts from "./pages/Thoughts"
 import BubbleForm from "./pages/BubbleForm/BubbleForm.js"
 import Welcome from "./pages/Welcome"
-
+import Animation from "./components/Animation/Animation"
 import React, { Component } from 'react';
 import axios from 'axios'
-
+import Footer from './components/Footer'
 import Home from "./pages/Home"
 
 class App extends Component {
@@ -118,8 +118,8 @@ class App extends Component {
 
           
 
-
-
+          <Animation/>    
+          <Footer/>
         </div>
      </Router>
     );
