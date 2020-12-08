@@ -9,10 +9,10 @@ import Signup from "./pages/Signup/Signup.js"
 import Thoughts from "./pages/Thoughts"
 import BubbleForm from "./pages/BubbleForm/BubbleForm.js"
 import Welcome from "./pages/Welcome"
-
+import Animation from "./components/Animation/Animation"
 import React, { Component } from 'react';
 import axios from 'axios'
-
+import Footer from './components/Footer'
 import Home from "./pages/Home"
 
 class App extends Component {
@@ -34,6 +34,8 @@ class App extends Component {
 
   updateUser = (userObject) => {
     this.setState(userObject)
+    window.location.href ="/"
+
   }
 
   getUser = () => {
@@ -59,38 +61,40 @@ class App extends Component {
 
 
   logoutUser = () => {
-    this.setState({
-      loggedIn: false,
-      username: null
-    })
+    axios.post('/user/logout').then(response =>{
+      this.setState({
+        loggedIn: false,
+        username: null
+
+      },
+      window.location.href ="/"
+      )
+    }).catch(err=>console.log(err))
+  
   }
 
 
   render() {
     return (
       <Router>
-        <Switch>
         <div className="App">
           <Navbar logout={this.logoutUser} loggedIn={this.state.loggedIn} />
 
         
-          {this.state.loggedIn &&
+          {this.state.loggedIn ?(
+  <div>
+  <Switch>
+    <Route exact from="/" to="/home" component={Home} />
+    <Route exact path="/home" component={Home} />
 
-            <div>
-              <Switch>
-                <Route exact from="/" to="/home" component={Home} />
-                <Route exact path="/home" component={Home} />
+    <Route exact path="/bubbleform/:category" component={BubbleForm} />
+    <Route path="/home/:category" component={Thoughts} />
+  </Switch>
 
-                <Route exact path="/bubbleform/:category" component={BubbleForm} />
-                <Route path="/home/:category" component={Thoughts} />
-              </Switch>
-
-            </div>
-
-          }
-        
-
-          <Route
+</div>
+          ):(
+            <Switch>
+            <Route
            exact path="/"
             render={() =>
               <Login
@@ -100,14 +104,23 @@ class App extends Component {
           <Route
            exact path="/signup"
             render={() =>
-              <Signup
+              <Signup  updateUser={this.updateUser}
+
               />}
           />
+             </Switch>
+          )
 
+          
 
+          }
+        
 
+          
+
+          <Animation/>    
+          <Footer/>
         </div>
-      </Switch>
      </Router>
     );
   }
