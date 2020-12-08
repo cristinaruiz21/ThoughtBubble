@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
             })
             newUser.save((err, savedUser) => {
                 if (err) return res.json(err)
-                res.json(savedUser)
+                res.redirect(307,'/user/login')
             })
         }
     })
@@ -59,6 +59,7 @@ router.get('/', (req, res, next) => {
 router.post('/logout', (req, res) => {
     if (req.user) {
         req.logout()
+        console.log("logout the user")
         res.send({ msg: 'logging out' })
     } else {
         res.send({ msg: 'no user to log out' })
