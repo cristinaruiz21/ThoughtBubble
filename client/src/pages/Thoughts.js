@@ -77,7 +77,7 @@ function loadBubbles() {
                 </div>
 
 
-
+            </div>
             ) : ( 
                     <div>
                     {/* <h3 >No bubbles saved</h3>
@@ -100,7 +100,6 @@ function loadBubbles() {
 
 
     )
-
 
 
 }
