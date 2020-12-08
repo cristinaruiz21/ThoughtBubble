@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card'
 import API from "../utils/API";
-import {Link,useParams} from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Button from "../components/Button";
 import Jumbotron from 'react-bootstrap/Jumbotron'
 var moment = require('moment'); // require
@@ -47,7 +47,7 @@ function loadBubbles() {
         thought.length ? (
             <div>
                 <Jumbotron className="bubble-board-jumbo">{category}</Jumbotron>
-                <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md add"> + New Bubble</Button></Link>
+                <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md add"> +Add Bubble</Button></Link>
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
 
 
@@ -75,9 +75,7 @@ function loadBubbles() {
 
 
                 </div>
-                
-                  
-                  </div>
+
 
 
             ) : ( 
@@ -86,6 +84,7 @@ function loadBubbles() {
                     <Link to={"/bubbleform/" + category}><button>Add your bubble</button></Link> */}
                 <Jumbotron className="bubble-board-jumbo">{category}</Jumbotron>
                 <Link to ={"/bubbleform/"+category}><Button className="btn btn-primary btn-md add"> + New Bubble</Button></Link>
+
 
                 </div>
 

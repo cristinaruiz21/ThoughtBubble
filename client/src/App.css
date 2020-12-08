@@ -145,17 +145,17 @@
   .remove:hover {
     color: rgb(223, 50, 50);
   }
-  .date{
+  /* .date{
     color: white;
     font-size: 20px;
     position: absolute;
     top: -10px;
     left: -5px;
     cursor: pointer;
-  }
+  } */
   *, *:before, *:after {
     box-sizing: border-box;
-    margin:0;
+    margin:5;
     padding:0;
   }
   
@@ -172,7 +172,7 @@
   }
   
   .shadow {
-    padding: 12px;
+    padding: 6px;
   }
   .shadow__box {
     width: 50px;
@@ -193,6 +193,8 @@
     border : 1px solid rgb(128, 62, 0);
     width : 280px !important
   } */
+
+
   .errormsg{
     background-color: rgb(206, 142, 142);
     padding : 10px;
