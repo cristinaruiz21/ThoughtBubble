@@ -52,7 +52,7 @@ class Navbar extends Component {
              
 
                   <li class="nav-item ">
-                    <Link className="navbar-brand" to="/signup" >Signup </Link>
+                    <Link className="navbar-brand" to="/signup" > </Link>
 
                   </li>
                 </ul>

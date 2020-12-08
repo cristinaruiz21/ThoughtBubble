@@ -201,3 +201,52 @@
     border-radius: 10px;
     color: white;
   }
+
+  .loginCard { 
+    margin: 50px 100px 0px 100px;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+  }
+    
+.greetingWrapper {
+  margin-top: 10%;
+  
+}
+.loginWrapper{
+  flex: 1;
+  text-align: center;
+  border-color: blue;
+}
+
+.loginTitle {
+  padding-top: 10px;
+}
+
+.thoughtBubbleTitle {
+  padding-top: 10px
+} 
+
+.logo {
+  height: 150px;
+  width: 150px;
+} 
+
+.Loginbutton {
+  padding: 20px 0px 20px 0px;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  margin: 2px;
+  background-color: rgb(86, 181, 236);
+  border-radius: 50%;
+  display: inline-block;
+}
+.errormsg{
+  background-color: rgb(206, 142, 142);
+  padding : 10px;
+  border-radius: 10px;
+  color: white;
+}
