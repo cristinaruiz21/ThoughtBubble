@@ -7,7 +7,12 @@
 }
 
 .upload{
-    background-color: rgb(135, 164, 228)!important;
+    background-color: rgb(65, 121, 240)!important;
     border-radius: 10px!important;
     border-color: rgb(135, 164, 228)!important;
+
+}
+.card{
+    font-family: 'Nerko One', cursive;
+
 }

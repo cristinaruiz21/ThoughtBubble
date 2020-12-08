@@ -33,7 +33,7 @@ class Navbar extends Component {
     
                 </li> */}
                 <li class="nav-item ">
-                  <Link className="navbar-brand" to="/" onClick={this.props.logout} > Logout</Link>
+                  <Link className="navbar-brand"  onClick={this.props.logout} > Logout</Link>
 
                 </li>
                 {/* <li class="nav-item ">
@@ -52,7 +52,7 @@ class Navbar extends Component {
              
 
                   <li class="nav-item ">
-                    <Link className="navbar-brand" to="/signup" > </Link>
+                    <Link className="navbar-brand" to="/signup" >Signup </Link>
 
                   </li>
                 </ul>
