@@ -193,3 +193,9 @@
     border : 1px solid rgb(128, 62, 0);
     width : 280px !important
   } */
+  .errormsg{
+    background-color: rgb(206, 142, 142);
+    padding : 10px;
+    border-radius: 10px;
+    color: white;
+  }
